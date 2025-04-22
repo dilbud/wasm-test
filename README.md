@@ -1,0 +1,2 @@
+# wasm-test
+test wasm
