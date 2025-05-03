@@ -6,6 +6,6 @@ int main(int argc, char *argv[]) {
   // simple hello world
   printf("Hello, world! argc:%d\n", argc);
   for (int i = 0; i < argc; ++i) {
-    printf("fsdfsd[%d]:[%s]\n", i, argv[i]);
+    printf("hello[%d]:[%s]\n", i, argv[i]);
   }
 }
