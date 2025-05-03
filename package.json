@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "wapp": "nodemon --legacy-watch --polling-interval 100 --exec \"bash build.sh\" --watch app --ext cpp,txt"
+    "wapp": "nodemon --legacy-watch --polling-interval 1000 --exec \"bash build.sh\" --watch app --ext cpp,txt"
   },
   "dependencies": {
     "react": "^19.0.0",

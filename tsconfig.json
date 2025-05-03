@@ -8,6 +8,7 @@
     "emsdk",
     "app",
     "dist",
-    "build"
+    "build",
+    "watch"
   ]
 }

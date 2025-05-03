@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     watch: {
-      ignored: ['**/build/**', "**/smdsdk/**", "**/app/**"]
+      ignored: ['**/build/**', "**/smdsdk/**", "**/app/**", "**/watch/**"]
     }
   },
   plugins: [

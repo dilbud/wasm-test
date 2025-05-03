@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "wasm.hpp"
+
 int main(int argc, char *argv[]) {
   // simple hello world
   printf("Hello, world! argc:%d\n", argc);

@@ -27,4 +27,16 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+cp app/hello.wasm ../../src/assets/wasm/
+if [ $? -ne 0 ]; then
+    echo "Copying wasm file failed"
+    exit 1
+fi
+
+cp app/hello.js ../../src/assets/wasm/
+if [ $? -ne 0 ]; then
+    echo "Copying js file failed"
+    exit 1
+fi
+
 exit 0
