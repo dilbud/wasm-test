@@ -6,6 +6,7 @@ int main(int argc, char *argv[]) {
   // simple hello world
   printf("Hello, world! argc:%d\n", argc);
   for (int i = 0; i < argc; ++i) {
-    printf("hello[%d]:[%s]\n", i, argv[i]);
+    printf("sdsa[%d]:[%s]\n", i, argv[i]);
   }
+  printf("add(1, 2) = %d\n", add(1, 2));
 }

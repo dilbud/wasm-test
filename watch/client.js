@@ -12,6 +12,8 @@ const ws = new WebSocket('ws://localhost:8080');
 const appFolderPath = path.join(__dirname, '../app');
 console.log(appFolderPath);
 
+let debounceTimeout;
+const DEBOUNCE_DELAY = 300; // Adjust the delay as needed
 
 // Handle WebSocket connection open
 ws.on('open', () => {
@@ -27,8 +29,12 @@ ws.on('open', () => {
     // Watch for file changes
     watcher.on('all', (event, filePath) => {
         console.log(`File ${filePath} changed with event type: ${event}`);
-        // Emit a WebSocket event to the server
-        ws.send(JSON.stringify({ eventType: "change", filename: path.relative(appFolderPath, filePath) }));
+
+        // Debounce the WebSocket event emission
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            ws.send(JSON.stringify({ eventType: "change", filename: path.relative(appFolderPath, filePath) }));
+        }, DEBOUNCE_DELAY);
     });
 });
 

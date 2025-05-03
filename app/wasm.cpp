@@ -4,6 +4,8 @@
 #define EMSCRIPTEN_KEEPALIVE
 #endif
 
+#include "wasm.hpp"
+
 extern "C" {
 EMSCRIPTEN_KEEPALIVE
 int add(int a, int b) {
@@ -14,6 +16,6 @@ int add(int a, int b) {
 EMSCRIPTEN_KEEPALIVE
 int sub(int a, int b) {
   // Ooops!
-  return a + b;
+  return a - b;
 }
 }

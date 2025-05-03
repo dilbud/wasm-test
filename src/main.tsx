@@ -7,6 +7,9 @@ import Module, { MainModule } from "./wasm/hello";
 
 Module().then((mod: MainModule) => {
   console.log(mod);
+  console.log(mod._add(1, 2));
+  console.log(mod._sub(1, 2));
+  
 });
 
 
