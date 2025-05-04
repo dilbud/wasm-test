@@ -36,6 +36,18 @@ ws.on('open', () => {
             ws.send(JSON.stringify({ eventType: "change", filename: path.relative(appFolderPath, filePath) }));
         }, DEBOUNCE_DELAY);
     });
+
+    ws.on('message', (message) => {
+        console.log(`Received message from server: ${message}`);
+        try {
+            const event = JSON.parse(message);
+            if (event.eventType === 'build-complete') {
+                console.log('Build completed successfully');
+            }
+        } catch (err) {
+            console.error('Error parsing message:', err.message);
+        }
+    });
 });
 
 // Handle WebSocket connection errors

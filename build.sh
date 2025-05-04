@@ -17,7 +17,7 @@ cd build/wasm
 emcmake cmake ../..
 
 if [ $? -ne 0 ]; then
-    echo "CMake configuration failed"
+    echo "CMake configuration failed" >&2
     exit 1
 fi
 
@@ -31,19 +31,19 @@ fi
 
 cp app/hello.wasm ../../src/wasm/hello/dist/
 if [ $? -ne 0 ]; then
-    echo "Copying wasm file failed"
+    echo "Copying wasm file failed" >&2
     exit 1
 fi
 
 cp app/hello.js ../../src/wasm/hello/dist/
 if [ $? -ne 0 ]; then
-    echo "Copying js file failed"
+    echo "Copying js file failed" >&2
     exit 1
 fi
 
 cp app/hello.d.ts ../../src/wasm/hello/dist/@types/
 if [ $? -ne 0 ]; then
-    echo "Copying d.ts file failed"
+    echo "Copying d.ts file failed" >&2
     exit 1
 fi
 
