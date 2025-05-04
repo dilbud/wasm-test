@@ -5,7 +5,31 @@ import App from './App.tsx'
 
 import Module, { MainModule } from "./wasm/hello";
 
-Module().then((mod: MainModule) => {
+const module = {
+  print(...e) {
+    console.log(...e);
+  },
+  setStatus(e) {
+    console.log(e);
+  },
+  totalDependencies: 0,
+  monitorRunDependencies(e) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    this.totalDependencies = Math.max(this.totalDependencies, e)
+    module.setStatus(
+      e
+        ? "Preparing... (" +
+            (this.totalDependencies - e) +
+            "/" +
+            this.totalDependencies +
+            ")"
+        : "All downloads complete."
+    );
+  },
+};
+module.setStatus("Downloading...");
+
+Module(module).then((mod: MainModule) => {
   console.log(mod);
   console.log(mod._add(1, 2));
   console.log(mod._sub(1, 2));
