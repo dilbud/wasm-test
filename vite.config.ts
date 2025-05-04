@@ -10,7 +10,8 @@ export default defineConfig({
     }
   },
   plugins: [
-    react()],
+    react()
+  ],
   build: {
     sourcemap: true,
   }

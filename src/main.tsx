@@ -6,14 +6,14 @@ import App from './App.tsx'
 import Module, { MainModule } from "./wasm/hello";
 
 const module = {
-  print(...e) {
+  print(...e: unknown[]) {
     console.log(...e);
   },
-  setStatus(e) {
+  setStatus(e: string): void {
     console.log(e);
   },
   totalDependencies: 0,
-  monitorRunDependencies(e) {
+  monitorRunDependencies(e: number): void {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     this.totalDependencies = Math.max(this.totalDependencies, e)
     module.setStatus(
