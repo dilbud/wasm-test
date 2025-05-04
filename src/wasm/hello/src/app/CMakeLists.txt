@@ -1,4 +1,4 @@
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -fdebug-prefix-map=/workspaces/wasm-test/app=D:/PROJECTS/learning/wasm/wasm-test/app -g -msimd128 -msse --emit-tsd hello.d.ts")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g -msimd128 -msse --emit-tsd hello.d.ts")
 add_executable(hello hello.cpp)
 
 set_target_properties(hello PROPERTIES LINK_FLAGS "\
