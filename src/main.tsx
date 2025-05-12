@@ -33,7 +33,16 @@ Module(module).then((mod: MainModule) => {
   console.log(mod);
   console.log(mod._add(1, 2));
   console.log(mod._sub(1, 2));
+  console.log('lerp result: ' + mod.lerp(1, 2, 0.5));
+
+  const instance = new mod.MyClass(10, "hello");
+  instance.incrementX();
+  console.log(instance.x); // 11
   
+  instance.x = 20; // 20
+  mod.MyClass.getStringFromInstance(instance);
+  console.log(mod.MyClass.getStringFromInstance(instance));
+  instance.delete();
 });
 
 
