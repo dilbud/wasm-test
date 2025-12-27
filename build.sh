@@ -35,6 +35,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+cp app/hello.wasm.map ../../src/wasm/hello/dist/
+if [ $? -ne 0 ]; then
+    echo "Copying wasm map file failed" >&2
+    exit 1
+fi
+
 cp app/hello.js ../../src/wasm/hello/dist/
 if [ $? -ne 0 ]; then
     echo "Copying js file failed" >&2

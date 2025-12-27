@@ -12,8 +12,7 @@
             "url": "http://localhost:5173",
             "trace": true,
             "sourceMaps": true,
-            "webRoot": "${workspaceFolder}",
-            "outFiles": ["${workspaceFolder}/dist/assets/**/*.js", "${workspaceFolder}/dist/assets/**/*.js.map"]
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }

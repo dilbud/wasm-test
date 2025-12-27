@@ -5,7 +5,6 @@ import chokidar, { FSWatcher } from 'chokidar';
 import { fileURLToPath } from 'url';
 
 export const watchClient = (config?: object): PluginOption => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const options = {
         ...config,
     }
@@ -28,7 +27,6 @@ export const watchClient = (config?: object): PluginOption => {
     return {
         name: "vite-plugin-watch-client",
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         configureServer(server: ViteDevServer) {
 
             console.log('Vite server started, setting up WebSocket connection...');
