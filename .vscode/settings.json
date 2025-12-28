@@ -3,5 +3,8 @@
     "C_Cpp.default.cStandard": "c17",
     "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
     "C_Cpp.default.compilerPath": "/usr/bin/clang",
-    "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/compile_commands.json"
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "cSpell.words": [
+        "emscripten"
+    ]
 }
